@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Princess Chicken's birthday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Hind Madurai', sans-serif;
+    }
+
+    img {
+      display: block;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      max-width: 100vw;
+      background: url('./assets/background.avif');
+    }
+
+    #main {
+      width: 60vw;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      margin-bottom: 30px;
+      border-radius: 8px;
+      border-color: transparent;
+      background: rgb(237, 151, 180);
+      cursor: pointer;
+    }
+
+    .animation {
+      height: 100vh;
+      width: 60vw;
+      position: absolute;
+      top: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-wrap: wrap;
+      overflow: hidden;
+      transition: opacity 500ms;
+    }
+
+    .balloon {
+      height: 125px;
+      width: 105px;
+      border-radius: 75% 75% 70% 70%;
+      position: absolute;
+      left: calc(60vw / 2 - 50px);
+      background-color: rgba(220, 6, 146, 0.7);
+      color: rgba(220, 6, 146, 0.7);
+      box-shadow: rgb(210 0 136 / 70%) -7px -3px 10px inset;
+      animation: 30s ease-in 0s infinite normal none running float;
+    }
+
+    .balloon:before {
+      content: '';
+      height: 75px;
+      width: 1px;
+      padding: 1px;
+      background-color: #fdfd96;
+      display: block;
+      position: absolute;
+      top: 125px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .balloon:after {
+      content: '▲';
+      text-align: center;
+      display: block;
+      position: absolute;
+      color: inherit;
+      top: 120px;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .message {
+      position: absolute;
+      bottom: calc(-70px - 75px - 20px);
+      left: -45px;
+      background: white;
+      padding: 20px 40px;
+      border-radius: 8px;
+      width: 200px;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh);
+        opacity: 1;
+      }
+      to {
+        transform: translateY(-300vh);
+        opacity: 0;
+      }
+    }
+  </style>
+  <body>
+    <div id="main">
+      <h1>Dear My Princess Chicken</h1>
+
+      <p>
+        Chúc mừng sinh nhật em bé gà. Năm đầu tiên đón sinh nhật cùng nhau và
+        mong rằng có sẽ cùng đón với nhau nhiều hơn nữa nha. Chúc bé gà qua năm
+        tuổi mới sẽ thật vui vẻ, hạnh phúc, học thật tốt để trở thành QC và luôn
+        luôn mãi mãi xinh đẹp dễ thương & yêu anh Thóc nhiều hơn nè.
+      </p>
+
+      <p>
+        Và có một điều quan trọng này anh muốn nói với gà nè. Tuy là hông gặp
+        nhau ở khoảng thời gian đẹp nhất và cũng là khoảng thời gian anh biết là
+        gặp nhiều khó khăn nhất. Anh ước gì được gặp gà sớm hơn để có thể giúp
+        gà được phần nào nhưng mà coi như cũng may vớt được con gà lúc này là
+        ngon òi hehe 😜😜😜
+      </p>
+
+      <p>
+        Vậy là chỉ còn 9 ngày nữa thui là tới đám cưới òi. Bé gà có lo hong nò,
+        dìa chung 1 nhà cũng được mấy tuần òi mà thấy ăn hiếp anh Thóc hơi quá
+        đáng ó nha. Sau đám cưới bớt ăn hiếp lại đi đó.
+      </p>
+
+      <p>Sau cùng thì anh có món quà này tặng gà nò.</p>
+
+      <button onclick="showMessage()">GÀ ẤN VÔ ĐI ❤️️</button>
+
+      <div class="animation hidden">
+        <div class="balloon">
+          <div class="message">Gà quay sang nhìn anh đi nò ❤️❤️❤️</div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    function showMessage() {
+      const animation = document.getElementsByClassName('animation')[0];
+      animation.classList.remove('hidden');
+    }
+  </script>
+</html>
